@@ -1,0 +1,122 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+main {
+    display: grid;
+    /* justify-content: center; */
+    max-width: 40rem;
+    margin-inline: auto;
+    /* border: 1px solid red; */
+
+    & .back {
+        & a {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+            font: var(--link);
+            color: var(--color-brand);
+        
+            & img {
+                width: 1.25rem;
+            }
+        }
+    }
+
+    & h1 {
+        margin-bottom: 2.75rem;
+    }
+}
+
+form {
+    & .top-form {
+        display: grid;
+        grid-template-columns: 28rem 10rem;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+
+        & input {
+            background-color: var(--background-secondary);
+            border: 2px solid var(--border-primary);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            color: var(--content-tertiary);
+            font: var(--link);
+
+            &::placeholder {
+                color: var(--content-tertiary);
+            }
+
+            &:hover {
+                border-color: var(--border-hover);
+            }
+
+            &:focus {
+                outline: none;
+                border-color: var(--color-brand);
+            }
+        }
+
+        & button {
+            background-color: var(--color-brand);
+            border: none;
+            border-radius: 0.75rem;
+            color: var(--background-secondary);
+            font: var(--label);
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--color-brand-hover);
+            }
+        }
+    }
+
+    & .radio-wrapper {
+        list-style: none;
+        display: grid;
+        & .radio-inner {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            margin-bottom: 0.75rem;
+            background-color: var(--background-secondary);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.75rem;
+
+            & input {
+                appearance: none;
+            }
+
+            & .radio-img {
+                background-image: url(../assets/icons/state=Default.svg);
+
+                width: 1rem;
+                height: 1rem;
+
+            }
+
+            &:hover, &:focus-within {
+                & .radio-img {
+                    background-image: url(../assets/icons/state=hover.svg);
+                }
+            }
+
+            &:has(:checked) {
+                & .radio-img {
+                    background-image: url(../assets/icons/state=selected.svg);
+                }
+            }
+
+            & label {
+                margin-right: auto;
+            }
+        }
+    }
+    
+}

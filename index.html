@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicklist</title>
+
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+    <header>
+        <img src="./assets/logo.svg" alt="">
+    </header>
+
+    <main>
+        <div class="back">
+            <a href="#">
+                <img src="./assets/icons/arrow-left-02-stroke-rounded.svg" alt="">
+                Voltar
+            </a>
+        </div>
+        <h1>Compras da semana</h1>
+
+        <form action="">
+            <div class="top-form">
+                <input type="text" name="add-item" id="add-item" placeholder="Adicione um novo item">
+                <button type="submit">Adicionar item</button>
+            </div>
+
+            <div class="radio-wrapper">
+                <div class="radio-inner">
+                    <div class="radio-img"></div>
+                    <input type="radio" name="item" id="item1">
+                    <label for="item1">Pão de forma</label>
+                    <a>
+                        <img src="./assets/icons/Frame.svg" alt="">
+                    </a>
+                </div>
+
+                <div class="radio-inner">
+                    <div class="radio-img"></div>
+                    <input type="radio" name="item" id="item2">
+                    <label for="item2">Café preto</label>
+                    <a>
+                        <img src="./assets/icons/Frame.svg" alt="">
+                    </a>
+                </div>
+
+                <div class="radio-inner">
+                    <div class="radio-img"></div>
+                    <input type="radio" name="item" id="item3">
+                    <label for="item3">Suco de laranja</label>
+                    <a>
+                        <img src="./assets/icons/Frame.svg" alt="">
+                    </a>
+                </div>
+                
+                <div class="radio-inner">
+                    <div class="radio-img"></div>
+                    <input type="radio" name="item" id="item4">
+                    <label for="item4">Bolacha</label>
+                    <a>
+                        <img src="./assets/icons/Frame.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="deleted">
+                <img src="./assets/icons/warning-circle-filled.svg" alt="">
+                <span>O item foi removido da lista</span>
+                <img src="./assets/icons/delete-small.svg" alt="">
+            </div>
+        </form>
+    </main>
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
