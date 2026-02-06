@@ -8,10 +8,8 @@ header {
 
 main {
     display: grid;
-    /* justify-content: center; */
-    max-width: 40rem;
+    max-width: 20rem;
     margin-inline: auto;
-    /* border: 1px solid red; */
 
     & .back {
         & a {
@@ -36,7 +34,6 @@ main {
 form {
     & .top-form {
         display: grid;
-        grid-template-columns: 28rem 10rem;
         gap: 1rem;
         margin-bottom: 2.5rem;
 
@@ -137,5 +134,18 @@ form {
 
     &.del-alert {
         display: none;
+    }
+}
+
+@media (width >= 80em) {
+    main {
+        max-width: 40rem;
+    }
+
+    form {
+    & .top-form {
+        display: grid;
+        grid-template-columns: 28rem 10rem;
+        }
     }
 }

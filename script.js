@@ -5,7 +5,7 @@ const input = document.getElementById('add-item')
 const deleteItem = document.querySelectorAll('.delete-item')
 const delAlert = document.querySelector('.del-alert')
 const removeAlert = document.querySelector('.remove-alert')
-const back = document.querySelector('.btn-back')
+let timeoutId
 
 listaContainer.addEventListener('click', (event) => {
     event.preventDefault()
@@ -18,7 +18,14 @@ listaContainer.addEventListener('click', (event) => {
 
     if (event.target.closest('a')) {
         itemClicado.remove(itemClicado)
+
+        clearTimeout(timeoutId)
+
         delAlert.classList.remove("del-alert")
+
+        timeoutId = setTimeout(() => {
+            delAlert.classList.add("del-alert")
+        }, 3000)
     }
 
     const tagClicada = event.target.tagName;
@@ -77,20 +84,3 @@ removeAlert.addEventListener('click', (event) => {
     event.preventDefault()
     delAlert.classList.toggle("del-alert")
 })
-
-back.addEventListener('click', (event) => {
-    event.preventDefault()
-})
-
-/*
-<div class="checkbox-inner">
-    <div class="checkbox-img"></div>
-    <input type="checkbox" name="item" id="item1">
-    <label for="item1">Pão de forma</label>
-    <a href="" class="delete-item">
-        <img src="./assets/icons/Frame.svg" alt="">
-    </a>
-</div>
-
-text-decoration-line: line-through;
-*/
