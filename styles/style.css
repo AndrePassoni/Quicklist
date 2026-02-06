@@ -134,4 +134,8 @@ form {
         font: var(--label);
         margin-right: auto;
     }
+
+    &.del-alert {
+        display: none;
+    }
 }
