@@ -1,34 +1,46 @@
-const listaContainer = document.querySelector('.checkbox-wrapper');
-const itemLista = document.querySelectorAll('.checkbox-inner');
+const listaContainer = document.querySelector('.checkbox-wrapper')
+const itemLista = document.querySelectorAll('.checkbox-inner')
 const form = document.querySelector('form')
 const input = document.getElementById('add-item')
-const deleteItem = document.querySelectorAll('.delete-item');
-const delAlert = document.querySelector('.del-alert');
+const deleteItem = document.querySelectorAll('.delete-item')
+const delAlert = document.querySelector('.del-alert')
+const removeAlert = document.querySelector('.remove-alert')
+const back = document.querySelector('.btn-back')
 
 listaContainer.addEventListener('click', (event) => {
     event.preventDefault()
 
-    const itemClicado = event.target.closest('.checkbox-inner');
+    const itemClicado = event.target.closest('.checkbox-inner')
 
     if (!itemClicado) {
-        return;
+        return
     }
 
     if (event.target.closest('a')) {
-        console.log('Clicou no lixo. Ação ignorada.');
-        return;
+        itemClicado.remove(itemClicado)
+        delAlert.classList.remove("del-alert")
     }
 
     const tagClicada = event.target.tagName;
     if (tagClicada === 'INPUT' || tagClicada === 'LABEL') {
-        return;
+        return
     }
 
-    const input = itemClicado.querySelector('input');
+    const input = itemClicado.querySelector('input')
     if(input) {
-        input.checked = !input.checked;
+        input.checked = !input.checked
     }
-});
+    
+    if (input.checked) {
+        itemClicado.style.textDecorationLine = "line-through"
+        itemClicado.style.opacity = "0.7"
+    }
+
+    else {
+        itemClicado.style.textDecorationLine = "none"
+        itemClicado.style.opacity = "1"
+    }
+})
 
 form.onsubmit = (event) => {
     event.preventDefault()
@@ -56,10 +68,19 @@ form.onsubmit = (event) => {
         newInner.append(newImg, newCheckbox, newLabel, newA, newTrash)
         newA.append(newTrash)
         newLabel.textContent = input.value
+
+        input.value = ""
     }
 }
 
+removeAlert.addEventListener('click', (event) => {
+    event.preventDefault()
+    delAlert.classList.toggle("del-alert")
+})
 
+back.addEventListener('click', (event) => {
+    event.preventDefault()
+})
 
 /*
 <div class="checkbox-inner">
@@ -70,4 +91,6 @@ form.onsubmit = (event) => {
         <img src="./assets/icons/Frame.svg" alt="">
     </a>
 </div>
+
+text-decoration-line: line-through;
 */
